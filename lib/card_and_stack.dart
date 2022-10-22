@@ -17,27 +17,32 @@ class MyStack extends StatelessWidget {
   }
 
   Widget _buildStack() {
-    return Stack(
-      alignment: const Alignment(0.6, 0.6),
-      children: [
-        const CircleAvatar(
-          backgroundImage: AssetImage('images/pic0.jpg'),
-          radius: 100,
-        ),
-        Container(
-          decoration: const BoxDecoration(
-            color: Colors.black45,
+    return Container(
+      decoration: const BoxDecoration(
+          color: Colors.black26,
+          borderRadius: BorderRadius.all(Radius.circular(8))),
+      child: Stack(
+        alignment: const Alignment(0.6, 0.6),
+        children: [
+          const CircleAvatar(
+            backgroundImage: AssetImage('images/pic0.jpg'),
+            radius: 100,
           ),
-          child: const Text(
-            'Mia B',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.black45,
             ),
-          ),
-        )
-      ],
+            child: const Text(
+              'Mia B',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
