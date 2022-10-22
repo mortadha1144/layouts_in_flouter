@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class MyStack extends StatelessWidget {
   const MyStack({super.key});
 
+  static const showStack = false;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,7 +13,7 @@ class MyStack extends StatelessWidget {
         appBar: AppBar(
           title: const Text('data'),
         ),
-        body: Center(child: _buildStack()),
+        body: Center(child: showStack ? _buildStack() : _buildCard()),
       ),
     );
   }
@@ -42,6 +44,51 @@ class MyStack extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Widget _buildCard() {
+    return SizedBox(
+      height: 210,
+      child: Card(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            ListTile(
+              title: const Text(
+                '1625 Main Street',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              subtitle: const Text('My City, CA 99984'),
+              leading: Icon(
+                Icons.restaurant_menu,
+                color: Colors.blue[500],
+              ),
+            ),
+            const Divider(),
+            ListTile(
+              title: const Text(
+                '(408) 555-1212',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              leading: Icon(
+                Icons.contact_phone,
+                color: Colors.blue[500],
+              ),
+            ),
+            ListTile(
+              title: const Text(
+                'costa@example.com',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              leading: Icon(
+                Icons.contact_mail,
+                color: Colors.blue[500],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
