@@ -64,6 +64,8 @@ class HomeScreen extends StatelessWidget {
               child: const Text('Navigate to screen that extracts arguments'),
             ),
             ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColorDark),
+              foregroundColor: MaterialStateProperty.all(Theme.of(context).primaryColorLight),),
               onPressed: () {
                 Navigator.pushNamed(
                   context,
