@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 //import 'main_screen.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key,this.str=''});
+  const MyDrawer({super.key});
 
-  final String? str;
+  //String? _str;
 
   static void selectScreen(BuildContext ctx, int n) {
     if (n == 1) {
@@ -16,7 +16,9 @@ class MyDrawer extends StatelessWidget {
           'id': 10,
           'title': 'info1',
         },
-      ).then((value) => print(value));
+      ).then(
+        (value) {},
+      );
     } else {
       Navigator.of(ctx).pushReplacementNamed(
         n == 0 ? '/' : '/screen2',

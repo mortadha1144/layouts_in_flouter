@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 //import 'package:layouts_in_flouter/Multi_Screens/lesson_four.dart';
 //import 'package:layouts_in_flouter/Multi_Screens/example_flutter.dart';
 import 'package:layouts_in_flouter/Multi_Screens/lesson_two.dart';
-import 'package:layouts_in_flouter/Multi_Screens/main_screen.dart';
+//import 'package:layouts_in_flouter/Multi_Screens/main_screen.dart';
+import 'package:layouts_in_flouter/slider/slider.dart';
 //import 'package:layouts_in_flouter/todo_app/home_page.dart';
 //import 'package:layouts_in_flouter/managing_state.dart';
 //import 'package:layouts_in_flouter/card_and_stack.dart';
@@ -11,7 +12,7 @@ import 'package:layouts_in_flouter/Multi_Screens/main_screen.dart';
 //import 'package:layouts_in_flouter/grid_and_list.dart';
 
 void main() {
-  runApp(const MainScreen());
+  runApp(const MySlider());
 }
 
 class MyApp extends StatelessWidget {
