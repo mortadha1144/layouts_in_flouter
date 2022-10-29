@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:layouts_in_flouter/Multi_Screens/drawer.dart';
 import 'package:layouts_in_flouter/Multi_Screens/screen1.dart';
 import 'package:layouts_in_flouter/Multi_Screens/screen2.dart';
 
@@ -30,15 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void selectScreen(BuildContext ctx, int n) {
-    Navigator.of(ctx).pushNamed(
-      '/screen$n',
-      arguments: {
-        'id': n == 1 ? 10 : 20,
-        'title': n == 1 ? 'info1' : 'info2',
-      },
-    );
-  }
+
 
   final List<Map<String, Object>> _pages = [
     {
@@ -91,34 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                onTap: () => selectScreen(context, 1),
-                title: const Text(
-                  'Go To Screen 1',
-                  style: TextStyle(fontSize: 30.0),
-                ),
-                subtitle: const Text(
-                  'Go To Screen 1',
-                ),
-                trailing: const Icon(Icons.arrow_forward_ios),
-              ),
-              ListTile(
-                onTap: () => selectScreen(context, 2),
-                title: const Text(
-                  'Go To Screen 2',
-                  style: TextStyle(fontSize: 30.0),
-                ),
-                subtitle: const Text(
-                  'Go To Screen 2',
-                ),
-                trailing: const Icon(Icons.arrow_forward_ios),
-              ),
-            ],
-          ),
-        ),
+        drawer: const MyDrawer(),
       ),
     );
   }
